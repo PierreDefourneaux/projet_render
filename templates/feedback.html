@@ -9,16 +9,11 @@
 </head>
 
 <body>
-    <h1>Résultat</h1>
+    <h1>Feedback</h1>
+    <p>Votre observation "{{ evaluation_on_page }}" a bien été renvoyée à la base de données pour ré-entraîner le modèle. Merci !</p>
     <p>Phrase : {{ phrase_on_page }}</p>
     <p>Prédiction : {{ prediction_on_page }}</p>
-    <p>Est-ce correct ?</p>
-    <form method="POST" action="{{ url_for('feedback') }}">
-        <input type="hidden" name="label_phrase" value="{{ phrase_on_page }}">
-        <input type="hidden" name="label_prediction" value="{{ prediction_on_page }}">
-        <button type="submit" name="feedback_button" value="prédiction correcte">L'interprêtation est correcte.</button>
-        <button type="submit" name="feedback_button" value="prédiction incorrecte">Non, le modèle s'est trompé.</button>
-    </form>
+    <p>transaction mongo = : {{ transaction_mongo }}</p>
     <br>
     <a href="{{ url_for('index') }}">Retour à l'accueil</a>
 </body>
