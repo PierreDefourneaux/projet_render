@@ -42,8 +42,11 @@ except Exception as e:
 #####################################################################################################
 # connection mongo pour les tests en local
 
-# uri = "mongodb+srv://pierredefourneaux:1LU4eHCPR5No2zC8@cluster0.we1k0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
+# from dotenv import load_dotenv
+# import os
+# load_dotenv()
+# uri = os.getenv('URI')
 # # Create a new client and connect to the server
 # client = MongoClient(uri, server_api=ServerApi('1'))
 
